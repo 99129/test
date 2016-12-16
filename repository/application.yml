@@ -1,11 +1,11 @@
 ---
 spring:
   profiles: dev
-host:
-  name: dev.com
+test:
+  name: this is dev
 
 ---
 spring:
   profiles: sit
-host:
-  name: sit.com
+test:
+  name: this is sit
