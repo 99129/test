@@ -1,7 +1,9 @@
+---
 spring:
   profiles: dev
 host:
   name: dev.com
+
 ---
 spring:
   profiles: sit
