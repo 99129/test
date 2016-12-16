@@ -1,0 +1,31 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: config
+  profiles:
+    active: @profilesActive@
+
+---
+spring:
+  profiles: dev
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:///Users/admin/work/IdeaProjects/grouptactic/group-tac/grouptactic-repository/, file:///Users/heyang/zc_workspace/group-tac/grouptactic-repository/,file:///Users/hanqilin/ideaWorkSpace/group-tac/grouptactic-repository/,file:D://GroupTac/dev/group-tac/grouptactic-repository,file://app/
+---
+spring:
+  profiles: sit
+  cloud:
+    config:
+      server:
+        git:
+          username: "baikeyu@grouptactic.com"
+          password: "GroupTactic.dev.123"
+          timeout: 60000
+          uri: https://git.oschina.net/grouptactic/group-tac.git
+          search-paths: grouptactic-repository
+          default-label: ${label:develop}
+
+
